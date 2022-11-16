@@ -22,6 +22,7 @@ def divide(s, n):
                 count += 1
     return [a, count]
 
+count = divide(aes.text_to_hex(pt), 32)[1]
 #Encrypt ECB
 def encryptECB(pt, key):
     pt = aes.text_to_hex(pt)
@@ -36,6 +37,7 @@ def encryptECB(pt, key):
         cp += c[i]
     return cp
 
-print(encryptECB(pt, key))
+#print(encryptECB(pt, key))
+#print(count)
 
 

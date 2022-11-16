@@ -1,22 +1,27 @@
 import aes
 
 #input
-pt = 'dai hoc bach khoa ha noi'
+pt = 'truong dai hoc bach khoa ha noi'
 key = '0f1571c947d9e8590cb7add6af7f6798'
 
 #Chia thanh cac khoi n-byte (8*n-bit)
 def divide(s, n):
     a = []
+    count = 0
     for i in range(0, len(s), n):
         a.append(s[i:i + n])
     for i in range(len(a)):
         if len(a[i]) < n:
             a[i] += '8'
+            count += 1
             for j in range(0, n):
                 if len(a[i]) == n:
                     break
                 a[i] += '0'
-    return a
+                count += 1
+    return [a, count]
+
+count = divide(aes.text_to_hex(pt), 32)[1]
 
 #encrypt CBC
 def encryptCBC(pt, key):
@@ -25,10 +30,9 @@ def encryptCBC(pt, key):
     key = key.upper()
     IV = '0123456789abcdeffedcba9876543210'
     IV = IV.upper()
-    p = divide(pt, 32)
-    #print('p la: ', p)
-    pre_p = aes.xor_hex(p[0], IV)
-    cr = aes.encrypt(pre_p, key)
+    p = divide(pt, 32)[0]
+    pre_c = aes.xor_hex(p[0], IV)
+    cr = aes.encrypt(pre_c, key)
     c = []
     c.append(cr)
     cp = ''
@@ -43,6 +47,7 @@ def encryptCBC(pt, key):
     return cp
 
 print(encryptCBC(pt, key))
+print(count)
 
 
 

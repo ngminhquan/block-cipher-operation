@@ -155,6 +155,17 @@ def xor(a, b):                              #xor 2 so nhi phan a, b
         else: c += '1'
     return c
 
+def xor_hex(a, b):                          #xor 2 so hexa, output 1 so hexa
+    a = hex_to_bin(a)
+    b = hex_to_bin(b)
+    c = ''
+    for i in range(len(a)):
+        if a[i] == b[i]:
+            c += '0'
+        else: c += '1'
+    c = bin_to_hex(c)
+    return c
+
 def multiplication(x, a):                   #phep nhan trong GF(2^8)
     x = hex_to_bin(x)
     a = hex_to_bin(a)
