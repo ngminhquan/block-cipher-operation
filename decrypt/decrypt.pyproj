@@ -23,8 +23,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="CBC_decrypt.py" />
+    <Compile Include="CFB_decrypt.py" />
     <Compile Include="decrypt_aes.py" />
     <Compile Include="ECB_decrypt.py" />
+    <Compile Include="encrypt_aes.py" />
+    <Compile Include="OFB_decrypt.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

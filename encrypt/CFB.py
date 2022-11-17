@@ -1,7 +1,7 @@
 import aes
 
 #input
-pt = 'dai hoc bach khoa ha noi'
+pt = 'truong dai hoc bach khoa ha noi'
 key = '0f1571c947d9e8590cb7add6af7f6798'
 
 

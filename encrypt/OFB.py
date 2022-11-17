@@ -15,29 +15,24 @@ def divide(s, n):
 def encryptOFB(pt, key):
     nonce = '0123456789abcdeffedcba9876543210'
     pt = aes.text_to_hex(pt)
-    print(pt)
     pt = pt.upper()
     key = key.upper()
     nonce = nonce.upper()
     out = nonce
     p = divide(pt, 32)
-    print(p)
     cp = ''
     for i in range(len(p)):
         if i == len(p) - 1:
-            print('end', i)
             out = aes.encrypt(out, key)
             c = aes.xor_hex(out[:len(p[i])], p[i])
-            print(cp)
             cp += c
             break
         out = aes.encrypt(out, key)
         c = aes.xor_hex(p[i], out)
         cp += c
-        print(i, cp)
     return cp
 
-encryptOFB(pt, key)
+print(encryptOFB(pt, key))
 
 
 
