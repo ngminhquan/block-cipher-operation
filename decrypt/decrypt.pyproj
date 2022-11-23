@@ -24,6 +24,7 @@
   <ItemGroup>
     <Compile Include="CBC_decrypt.py" />
     <Compile Include="CFB_decrypt.py" />
+    <Compile Include="CTR_decrypt.py" />
     <Compile Include="decrypt_aes.py" />
     <Compile Include="ECB_decrypt.py" />
     <Compile Include="encrypt_aes.py" />

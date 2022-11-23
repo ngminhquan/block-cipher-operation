@@ -121,6 +121,12 @@ def divide(s, n):
                 a[i] += '0'
     return a
 
+#add two hexa
+def add_hex(a, b):
+    c = int(a, 16) + int(b, 16)
+    c = bin_to_hex(dec_to_bin(c))
+    return c
+
 #S_box
 Sbox = [['63', '7C', '77', '7B', 'F2', '6B', '6F', 'C5', '30', '01', '67', '2B', 'FE', 'D7', 'AB', '76'],
         ['CA', '82', 'C9', '7D', 'FA', '59', '47', 'F0', 'AD', 'D4', 'A2', 'AF', '9C', 'A4', '72', 'C0'],

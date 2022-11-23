@@ -28,6 +28,7 @@
     <Compile Include="CTR.py" />
     <Compile Include="ECB.py" />
     <Compile Include="CFB.py" />
+    <Compile Include="module1.py" />
     <Compile Include="OFB.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />

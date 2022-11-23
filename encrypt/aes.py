@@ -15,6 +15,25 @@ def text_to_hex(s):
     d = bin_to_hex(d)
     return d
 
+#hex to ASCII
+def hex_to_text(s):
+    c = []
+    d = ''
+    s = hex_to_bin(s)
+    for i in range(0, len(s), 8):
+        c.append(bin_to_dec(int(s[i:i+8])))
+    for i in range(len(c)):
+        d += chr(c[i])
+    return d
+
+#add two hexa
+def add_hex(a, b):
+    c = int(a, 16) + int(b, 16)
+    c = bin_to_hex(dec_to_bin(c))
+    return c
+
+
+
 #Transform hexadecimal to binary
 def hex_to_bin(s):
     trans = {
@@ -363,5 +382,4 @@ def encrypt(pt, key):
     return cipher
 
 #print(encrypt(pt, key))
-
 

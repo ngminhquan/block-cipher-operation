@@ -121,6 +121,12 @@ def divide(s, n):
                 a[i] += '0'
     return a
 
+#add two hexa
+def add_hex(a, b):
+    c = int(a, 16) + int(b, 16)
+    c = bin_to_hex(dec_to_bin(c))
+    return c
+
 #Dich trai n bit
 def shift(s, nth):      #ham dich vong trai n bits
     if nth == 0:
