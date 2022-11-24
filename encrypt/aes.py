@@ -98,6 +98,18 @@ def dec_to_bin(s):
             res = '0' + res
     return res
 
+#Transform decimal to binary
+def dec_to_bin8(s):
+    res = bin(s).replace("0b", "") # loai bo 0b cua ham bin
+    if(len(res) % 8 != 0):
+        div = len(res) / 8
+        div = int(div)
+        counter = (8 * (div + 1)) - len(res)
+        for i in range(0, counter):
+            res = '0' + res
+    return res
+
+
 #Transform binary to decimal
 def bin_to_dec(s):
     dec, i = 0, 0
@@ -186,6 +198,17 @@ def matrixTrans(s):                         #chuyen chuoi ve ma tran
             k += 2
         b.append(a)
     return b
+
+#def matTrans(s, row, col):
+#    k = 0
+#    b = []
+#    for i in range(0, row):
+#        a = []
+#        for j in range(0, col):
+#            a.append(s[k] + s[k + 1])       #moi phan tu cua ma tran gom 2 so hexa
+#            k += 2
+#        b.append(a)
+#    return b
 
 def shiftRows(s):                           #
     value = ''
