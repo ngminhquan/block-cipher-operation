@@ -9,23 +9,26 @@ def text_to_hex(s):
     d = ''
     c = []
     for i in s:
-        c.append(ord(i))
+        c.append(hex(ord(i)))
     for i in range(len(c)):
-        d += dec_to_bin(c[i])
-    d = bin_to_hex(d)
+        c[i] = c[i].replace('0x', '')
+    for i in range(len(c)):
+        if len(c[i]) == 1:
+            c[i] = '0' + c[i]
+    for i in c:
+        d += i
     return d
 
+#print(text_to_hex('a\nb'))
 #hex to ASCII
 def hex_to_text(s):
-    c = []
-    d = ''
-    s = hex_to_bin(s)
-    for i in range(0, len(s), 8):
-        c.append(bin_to_dec(int(s[i:i+8])))
-    for i in range(len(c)):
-        d += chr(c[i])
-    return d
-
+    hex_pt =[]
+    text =''
+    for i in range(0,len(s),2):
+        hex_pt.append(bin_to_dec(int(hex_to_bin(s[i:i+2]))))
+    for i in range(len(hex_pt)):
+        text += chr(hex_pt[i])
+    return text
 #Transform hexadecimal to binary
 def hex_to_bin(s):
     trans = {
